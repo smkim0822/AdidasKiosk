@@ -10,25 +10,58 @@
     </head>
 
     <body>
-        <div class = "sub-frame">
-            <header>
-                <img src = "image/adidas2.png" class = "logo">
-                <div class = "page-title">풋살소개</div>
-            </header>
-            
-            <main>
-                <div class = "sub1_content">
-                    <p>풋살은 <b>FIFA</b>가 공인한 <b>5인제</b> 실내 축구입니다.<br>좁은 공간에서의 빠르고 정교한 플레이는기술과 순발력을 극대화하며,<br>모든 연령층에게 인기 있는 스포츠입니다.<br><br><br>1930년 우루과이에서 시작된 풋살은<br><b>브라질</b>을 중심으로 세계 전역으로 확산되었으며,<br>FIFA 풋살 월드컵 등 다양한 국제 대회가<br>정기적으로 개최되고 있습니다.</p>
-                </div>
-            </main>
+        <div class = "kiosk-wrapper">
+            <!-- 본 화면 -->
+            <div class = "sub-frame">
+                <header>
+                    <img src = "image/adidas2.png" class = "logo">
+                    <div class = "page-title">풋살소개</div>
+                </header>
+                
+                <main>
+                    <div class = "sub1_content">
+                        <p>풋살은 <b>FIFA</b>가 공인한 <b>5인제</b> 실내 축구입니다.<br>
+                            좁은 공간에서의 빠르고 정교한 플레이는기술과 순발력을 극대화하며,<br>
+                            모든 연령층에게 인기 있는 스포츠입니다.<br><br><br>
+                            
+                            
+                            1930년 우루과이에서 시작된 풋살은<br>
+                            <b>브라질</b>을 중심으로 세계 전역으로 확산되었으며,<br>
+                            FIFA 풋살 월드컵 등 다양한 국제 대회가<br>
+                            정기적으로 개최되고 있습니다.</p>
+                    </div>
+                </main>
 
-            <footer>
-                <div class = "footer-bar">
-                    <button class = "footer-btn" id = "back-btn"><img src = "image/arrow_back.png"></button>
-                    <button class = "footer-btn" id = "home-btn"><img src = "image/home.png"></button>
-                    <button class = "footer-btn" id = "menu-btn"><img src = "image/menu.png"></button>
-                </div>
-            </footer>
+                <footer>
+                    <div class = "footer-bar">
+                        <button class = "footer-btn" id = "back-btn" onclick = "history.back()"><img src = "image/arrow_back.png"></button>
+                        <button class = "footer-btn" id = "home-btn" onclick = "location.href = 'main.html'"><img src = "image/home.png"></button>
+                        <button class = "footer-btn" id = "menu-btn" onclick = "openMenu()"><img src = "image/menu.png"></button>
+                    </div>
+                </footer>
+            </div>
+
+            <!-- 메뉴 프레임 -->
+            <div class = "menu-frame">
+                <div id = "menu-overlay" class = "menu-overlay" onclick = "closeMenu()"></div>
+                <aside id = "side-menu" class = "side-menu">
+                    <div class = "menu-top" onclick = "closeMenu()">
+                        <button class = "menu-close-btn">&#10005;</button>
+                    </div>
+                    <button class = "menu-item main-btn" onclick = "goTo('main.html')">메인화면</button>
+                    <button class = "menu-item intro-btn" onclick = "goTo('sub1.html')">풋살소개</button>
+                    <button class = "menu-item rule-btn" onclick = "goTo('sub2.html')">규칙</button>
+                    <button class = "menu-item char-btn" onclick = "goTo('sub3.html')">특징</button>
+                    <button class = "menu-item shoe-btn" onclick = "goTo('sub4.html')">풋살화</button>
+                    <button class = "menu-item subshoe-btn" onclick = "goTo('sub4-1.html')">Predator</button>
+                    <button class = "menu-item subshoe-btn" onclick = "goTo('sub4-2.html')">F50</button>
+                    <button class = "menu-item subshoe-btn" onclick = "goTo('sub4-3.html')">Copa</button>
+                    <button class = "menu-item reserve-btn" onclick = "goTo('sub5.html')">경기예약</button>
+                </aside>
+            </div>
+
         </div>
+
+        <script src = "menu.js"></script>
     </body>
 </html>

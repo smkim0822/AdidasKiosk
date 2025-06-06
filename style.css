@@ -62,6 +62,11 @@ footer{
     border: 1px solid white;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 
 /* Landing Page */
 .landing-frame {
@@ -317,4 +322,92 @@ footer{
     font-family: "Noto Sans KR", "Poppins", sans-serif;
     line-height: 1.5;
     /* border: 1px solid red; */
+}
+
+
+/* Menu */
+
+.menu-frame{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 1920px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.menu-frame.active{
+    pointer-events: auto;
+}
+
+.menu-overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 1920px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+.side-menu{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 1920px;
+    background: #111;
+    z-index: 1010;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+}
+
+.menu-top{
+    width: 450px;
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.menu-close-btn{
+    position: relative;
+    top: 5px;
+    right: 100px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 100px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.menu-item{
+    color: white;
+    background: none;
+    /* border: none; */
+    font-size: 48px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 40px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+}
+
+.main-btn, .intro-btn, .rule-btn, .char-btn, .reserve-btn{height: 241px;}
+.shoe-btn{height: 200px;}
+.subshoe-btn{height: 100px; font-size: 36px; padding-left: 60px;}
+
+.menu-item.active{
+    color: blue;
+    background: #222;
 }
