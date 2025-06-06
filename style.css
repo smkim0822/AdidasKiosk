@@ -9,15 +9,17 @@ header{
     flex-direction: column;
     align-items: center;
     margin-bottom: 420px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 main{
+    width: 1080px;
     height: 1300px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 .sub-frame{
@@ -181,7 +183,7 @@ footer{
 
 /* Sub 2 Page */
 
-.icon-text-list{
+.icon-text-list-sub2{
     display: flex;
     flex-direction: column;
     gap: 45px;
@@ -207,4 +209,112 @@ footer{
     color: white;
     font-size: 48px;
     line-height: 1.4;
+}
+
+
+/* Sub 3 Page */
+
+.char-text{
+    font-size: 36px;
+}
+
+.icon-text-list-sub3{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin: 60px 0;
+    align-items: flex-start;
+}
+
+
+/* Sub 4 Page */
+
+.sub4-btn{
+    width: 1080px;
+    height: 433.33px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 80px;
+    color: white;
+    background: black;
+    border: none;
+    border-bottom: 0.1px solid white;
+    font-family: "Noto Sans KR", "Poppins", sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.btn-img{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    flex-shrink: 0px;
+    /* transform: translateX(55px); */
+    margin-left: 55px;
+}
+
+.btn-text-box{
+    width: 825px;
+    height: 433px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    /* border: 1px solid yellow; */
+}
+
+.btn-text-main{
+    font-size: 80px;
+}
+
+.btn-text-sub{
+    font-size: 36px;
+}
+
+
+/* Sub 5 Page */
+
+.sub5-main{
+    width: 1080px;
+    height: 1300px;
+    position: relative;
+    /* border: 1px solid yellow; */
+}
+
+.plabfootballQR{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 347px;
+    top: 210px;
+    object-fit: contain;
+}
+
+.sub5-title{
+    position: absolute;
+    left: 50%;
+    top: 630px;
+    transform: translateX(-50%);
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    /* font-family: "Noto Sans KR", "Poppins", sans-serif; */
+}
+
+.sub5-desc{
+    width: 1000px;
+    position: absolute;
+    left: 50%;
+    top: 856px;
+    transform: translateX(-50%);
+    font-size: 48px;
+    color: white;
+    text-align: center;
+    font-family: "Noto Sans KR", "Poppins", sans-serif;
+    line-height: 1.5;
+    /* border: 1px solid red; */
 }
