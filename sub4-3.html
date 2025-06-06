@@ -10,23 +10,79 @@
     </head>
 
     <body>
-        <div class = "sub-frame">
-            <header>
-                <img src = "image/adidas2.png" class = "logo">
-                <div class = "page-title">Copa TF</div>
-            </header>
+        <div class = "kiosk-wrapper">
+            <!-- 본 화면 -->
+            <div class = "sub-frame">
+                <header>
+                    <img src = "image/adidas2.png" class = "logo">
+                    <div class = "page-title">Copa</div>
+                </header>
 
-            <main>
-                
-            </main>
+                <main>
+                    <div class = "carousel-frame">
+                        <img id = "carousel-left" class = "carousel-arrow left" src = "image/arrow_left.png" alt = "prev">
+                        <img id = "carousel-image" class = "carousel-img" src = "image/copa1.png" alt = "Copa TF">
+                        <img id = "carousel-right" class = "carousel-arrow right" src = "image/arrow_right.png" alt = "next">
+                    </div>
 
-            <footer>
-                <div class = "footer-bar">
-                    <button class = "footer-btn" id = "back-btn" onclick = "history.back()"><img src = "image/arrow_back.png"></button>
-                    <button class = "footer-btn" id = "home-btn" onclick = "location.href = 'main.html'"><img src = "image/home.png"></button>
-                    <button class = "footer-btn" id = "menu-btn"><img src = "image/menu.png"></button>
-                </div>
-            </footer>
+                    <div class = "carousel-indicators" id = "carousel-indicators"></div>
+
+                    <div class = "copa-text">
+                        <h2>인조 잔디에서 최상의 플레이를 이끌어 줄 아디다스 풋살화</h2>
+                        <p>물 흐르듯 자연스러운 연계를 위해 탄생한 코파 퓨어 3 프로 풋살화의 완벽한 편안함 속에서 나만의 방식으로 아름다운 게임을 펼쳐보세요. 
+                            아디다스 프라임니트 설포, 뒤꿈치 패드, 오쏘라이트® 삭라이너가 조합된 꼭 맞는 디자인으로 경기에 흔들림 없이 집중할 수 있습니다. 
+                            발과 하나처럼 밀착되는 퓨전스킨 가죽 갑피가 강화된 핏과 터치감을 제공합니다. 
+                            쿠션감이 느껴지는 EVA 미드솔과 고무 돌기 아웃솔이 인조 잔디에서 최상의 퍼포먼스를 선사합니다.
+                        </p>
+                    </div>
+
+                </main>
+
+                <footer>
+                    <div class = "footer-bar">
+                        <button class = "footer-btn" id = "back-btn" onclick = "history.back()"><img src = "image/arrow_back.png"></button>
+                        <button class = "footer-btn" id = "home-btn" onclick = "location.href = 'main.html'"><img src = "image/home.png"></button>
+                        <button class = "footer-btn" id = "menu-btn" onclick = "openMenu()"><img src = "image/menu.png"></button>
+                    </div>
+                </footer>
+            </div>
+
+            <script src = "carousel.js"></script>
+            <script>
+                const copaImages = [
+                    "image/copa1.png",
+                    "image/copa2.png",
+                    "image/copa3.png",
+                    "image/copa4.png",
+                    "image/copa5.png",
+                    "image/copa6.png",
+                    "image/copa7.png",
+                    "image/copa8.png",
+                    "image/copa9.png"
+                ];
+
+                createCarousel(copaImages);
+            </script>
+
+            <div class="menu-frame">
+                <div id="menu-overlay" class="menu-overlay" onclick="closeMenu()"></div>
+                <aside id="side-menu" class="side-menu">
+                    <div class="menu-top" onclick="closeMenu()">
+                        <button class="menu-close-btn" id="menu-close-btn">&#10005;</button>
+                    </div>
+                    <button class="menu-item main-btn" onclick="goTo('main.html')">메인화면</button>
+                    <button class="menu-item intro-btn" onclick="goTo('sub1.html')">풋살소개</button>
+                    <button class="menu-item rule-btn" onclick="goTo('sub2.html')">규칙</button>
+                    <button class="menu-item char-btn" onclick="goTo('sub3.html')">특징</button>
+                    <button class="menu-item shoe-btn" onclick="goTo('sub4.html')">풋살화</button>
+                    <button class="menu-item subshoe1-btn" onclick="goTo('sub4-1.html')">● Predator</button>
+                    <button class="menu-item subshoe2-btn" onclick="goTo('sub4-2.html')">● F50</button>
+                    <button class="menu-item subshoe3-btn" onclick="goTo('sub4-3.html')">● Copa</button>
+                    <button class="menu-item reserve-btn" onclick="goTo('sub5.html')">경기예약</button>
+                </aside>
+            </div>
         </div>
+
+        <script src = "menu.js"></script>
     </body>
 </html>

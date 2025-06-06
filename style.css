@@ -5,10 +5,10 @@
 }
 
 header{
+    height: 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 420px;
     /* border: 1px solid red; */
 }
 
@@ -260,6 +260,14 @@ a{
     margin-left: 55px;
 }
 
+.btn-img-r{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    flex-shrink: 0px;
+    margin-right: 55px;
+}
+
 .btn-text-box{
     width: 825px;
     height: 433px;
@@ -269,6 +277,19 @@ a{
     align-items: center;
     margin-left: 0;
     /* border: 1px solid yellow; */
+    gap: 52px;
+}
+
+.btn-text-box-r{
+    width: 825px;
+    height: 433px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    /* border: 1px solid green; */
+    gap: 52px;
 }
 
 .btn-text-main{
@@ -277,6 +298,151 @@ a{
 
 .btn-text-sub{
     font-size: 36px;
+}
+
+
+/* Sub 4 - 1 Page */
+
+.carousel-frame{
+    position: absolute;
+    top: 0420px;
+    left: 128px;
+    width: 832px;
+    height: 832px;
+    margin: 0 auto 0;
+    /* border: 1px solid yellow; */
+    align-self: flex-start;
+    margin-top: 0;
+}
+
+.carousel-img{
+    width: 832px;
+    height: 832px;
+    object-fit: contain;
+}
+
+.carousel-arrow{
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.left{left: -120px;}
+.right{right: -120px;}
+
+.carousel-indicators{
+    position: absolute;
+    top: 1252px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.carousel-dot .active{
+    background: #2196F3;
+}
+
+.carousel-indicators span{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #666;
+    cursor: pointer;
+}
+
+.carousel-indicators .active{
+    background: #2196F3;
+}
+
+.predator-text{
+    position: absolute;
+    top: 1300px;
+    width: 1000px;
+    height: 360px;
+    text-align: left;
+    padding: 20px;
+    /* border: 1px solid white; */
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.predator-text h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+    letter-spacing: -1px;
+}
+
+.predator-text p{
+    font-size: 32px;
+    font-weight: 400;
+    color: white;
+    letter-spacing: -1px;
+}
+
+
+/* Sub 4 - 2 Page */
+
+.f50-text{
+    position: absolute;
+    top: 1300px;
+    width: 1000px;
+    height: 360px;
+    text-align: left;
+    padding: 20px;
+    /* border: 1px solid white; */
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.f50-text h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+    letter-spacing: -2px;
+}
+
+.f50-text p{
+    font-size: 32px;
+    font-weight: 400;
+    color: white;
+    letter-spacing: -2px;
+}
+
+
+/* Sub 4 - 3 Page */
+
+.copa-text{
+    position: absolute;
+    top: 1300px;
+    width: 1000px;
+    height: 360px;
+    text-align: left;
+    padding: 20px;
+    /* border: 1px solid white; */
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.copa-text h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+    letter-spacing: -2px;
+}
+
+.copa-text p{
+    font-size: 32px;
+    font-weight: 400;
+    color: white;
+    letter-spacing: -2px;
 }
 
 
@@ -366,6 +532,7 @@ a{
     flex-direction: column;
     align-items: stretch;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .menu-top{
@@ -376,6 +543,7 @@ a{
     justify-content: flex-end;
     padding: 0 20px;
     cursor: pointer;
+    border: 1px solid white;
 }
 
 .menu-close-btn{
@@ -392,12 +560,12 @@ a{
 
 .menu-item{
     color: white;
-    background: none;
-    /* border: none; */
+    background: black;
+    border: 1px solid white;
     font-size: 48px;
     font-weight: bold;
-    text-align: left;
-    padding-left: 40px;
+    text-align: center;
+    /* padding-left: 40px; */
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
     outline: none;
@@ -405,9 +573,12 @@ a{
 
 .main-btn, .intro-btn, .rule-btn, .char-btn, .reserve-btn{height: 241px;}
 .shoe-btn{height: 200px;}
-.subshoe-btn{height: 100px; font-size: 36px; padding-left: 60px;}
+.subshoe1-btn, .subshoe2-btn, .subshoe3-btn{
+    height: 100px; font-size: 36px; padding-left: 40px;
+    text-align: left;
+}
 
-.menu-item.active{
-    color: blue;
-    background: #222;
+.side-menu .menu-item.active{
+    color: blue !important;
+    background: #222 !important;
 }

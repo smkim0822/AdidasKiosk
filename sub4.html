@@ -10,49 +10,72 @@
     </head>
 
     <body>
-        <div class = "sub-frame">
-            <header>
-                <img src = "image/adidas2.png" class = "logo">
-                <div class = "page-title">풋살화</div>
-            </header>
+        <div class = "kiosk-wrapper">
+            <!-- 본 화면 -->
+            <div class = "sub-frame">
+                <header>
+                    <img src = "image/adidas2.png" class = "logo">
+                    <div class = "page-title">풋살화</div>
+                </header>
 
-            <main>
-                <a href = "sub4-1.html" class = "sub4-btn">
-                    <button class = "sub4-btn">
-                        <img src = "image/predatortf_black.png" class = "btn-img" alt = "imgae2">
-                        <div class = "btn-text-box">
-                            <div class = "btn-text-main">Predator TF</div>
-                            <div class = "btn-text-sub">강력한 그립과 안정성으로 정교한 슈팅</div>
-                        </div>
-                    </button>
-                </a>
-                <a href = "sub4-2.html" class = "sub4-btn">                
-                    <button class = "sub4-btn">
-                        <img src = "image/f50tf_black.png" class = "btn-img" alt = "image2">
-                        <div class = "btn-text-box">
-                            <div class = "btn-text-main">F50 TF</div>
-                            <div class = "btn-text-sub">가벼움과 뛰어난 반발력으로 최상의 스피드</div>
-                        </div>
-                    </button>
-                </a>
-                <a href = "sub4-3.html" class = "sub4-btn">
-                    <button class = "sub4-btn">
-                        <img src = "image/copatf_black.png" class = "btn-img" alt = "image2">
-                        <div class = "btn-text-box">
-                            <div class = "btn-text-main">Copa TF</div>
-                            <div class = "btn-text-sub">편안한 착용감과 정밀한 터치로 완벽한 플레이</div>
-                        </div>
-                    </button>
-                </a>
-            </main>
+                <main>
+                    <a href = "sub4-1.html" class = "sub4-btn">
+                        <button class = "sub4-btn">
+                            <img src = "image/predatortf_black.png" class = "btn-img" alt = "imgae2">
+                            <div class = "btn-text-box">
+                                <div class = "btn-text-main">Predator TF</div>
+                                <div class = "btn-text-sub">강력한 그립과 안정성으로 정교한 슈팅</div>
+                            </div>
+                        </button>
+                    </a>
+                    <a href = "sub4-2.html" class = "sub4-btn">                
+                        <button class = "sub4-btn">
+                            <div class = "btn-text-box-r">
+                                <div class = "btn-text-main">F50 TF</div>
+                                <div class = "btn-text-sub">가벼움과 뛰어난 반발력으로 최상의 스피드</div>
+                            </div>
+                            <img src = "image/f50tf_black.png" class = "btn-img-r" alt = "image2">
+                        </button>
+                    </a>
+                    <a href = "sub4-3.html" class = "sub4-btn">
+                        <button class = "sub4-btn">
+                            <img src = "image/copatf_black.png" class = "btn-img" alt = "image2">
+                            <div class = "btn-text-box">
+                                <div class = "btn-text-main">Copa TF</div>
+                                <div class = "btn-text-sub">편안한 착용감과 정밀한 터치로 완벽한 플레이</div>
+                            </div>
+                        </button>
+                    </a>
+                </main>
 
-            <footer>
-                <div class = "footer-bar">
-                    <button class = "footer-btn" id = "back-btn" onclick = "history.back()"><img src = "image/arrow_back.png"></button>
-                    <button class = "footer-btn" id = "home-btn" onclick = "location.href = 'main.html'"><img src = "image/home.png"></button>
-                    <button class = "footer-btn" id = "menu-btn"><img src = "image/menu.png"></button>
-                </div>
-            </footer>
+                <footer>
+                    <div class = "footer-bar">
+                        <button class = "footer-btn" id = "back-btn" onclick = "history.back()"><img src = "image/arrow_back.png"></button>
+                        <button class = "footer-btn" id = "home-btn" onclick = "location.href = 'main.html'"><img src = "image/home.png"></button>
+                        <button class = "footer-btn" id = "menu-btn" onclick = "openMenu()"><img src = "image/menu.png"></button>
+                    </div>
+                </footer>
+            </div>
+
+            <div class="menu-frame">
+                <div id="menu-overlay" class="menu-overlay" onclick="closeMenu()"></div>
+                <aside id="side-menu" class="side-menu">
+                    <div class="menu-top" onclick="closeMenu()">
+                        <button class="menu-close-btn" id="menu-close-btn">&#10005;</button>
+                    </div>
+                    <button class="menu-item main-btn" onclick="goTo('main.html')">메인화면</button>
+                    <button class="menu-item intro-btn" onclick="goTo('sub1.html')">풋살소개</button>
+                    <button class="menu-item rule-btn" onclick="goTo('sub2.html')">규칙</button>
+                    <button class="menu-item char-btn" onclick="goTo('sub3.html')">특징</button>
+                    <button class="menu-item shoe-btn" onclick="goTo('sub4.html')">풋살화</button>
+                    <button class="menu-item subshoe1-btn" onclick="goTo('sub4-1.html')">● Predator</button>
+                    <button class="menu-item subshoe2-btn" onclick="goTo('sub4-2.html')">● F50</button>
+                    <button class="menu-item subshoe3-btn" onclick="goTo('sub4-3.html')">● Copa</button>
+                    <button class="menu-item reserve-btn" onclick="goTo('sub5.html')">경기예약</button>
+                </aside>
+            </div>
         </div>
+
+        <script src = "menu.js"></script>
     </body>
 </html>

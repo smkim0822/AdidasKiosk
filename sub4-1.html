@@ -10,23 +10,77 @@
     </head>
 
     <body>
-        <div class = "sub-frame">
-            <header>
-                <img src = "image/adidas2.png" class = "logo">
-                <div class = "page-title">Predator TF</div>
-            </header>
+        <div class = "kiosk-wrapper">
+            <!-- 본 화면 -->
+            <div class = "sub-frame">
+                <header>
+                    <img src = "image/adidas2.png" class = "logo">
+                    <div class = "page-title">Predator</div>
+                </header>
 
-            <main>
-                
-            </main>
+                <main>
+                    <div class = "carousel-frame">
+                        <img id = "carousel-left" class = "carousel-arrow left" src = "image/arrow_left.png" alt = "prev">
+                        <img id = "carousel-image" class = "carousel-img" src = "image/predator1.png" alt = "Predator TF">
+                        <img id = "carousel-right" class = "carousel-arrow right" src = "image/arrow_right.png" alt = "next">
+                    </div>
 
-            <footer>
-                <div class = "footer-bar">
-                    <button class = "footer-btn" id = "back-btn" onclick = "history.back()"><img src = "image/arrow_back.png"></button>
-                    <button class = "footer-btn" id = "home-btn" onclick = "location.href = 'main.html'"><img src = "image/home.png"></button>
-                    <button class = "footer-btn" id = "menu-btn"><img src = "image/menu.png"></button>
-                </div>
-            </footer>
+                    <div class = "carousel-indicators" id = "carousel-indicators"></div>
+
+                    <div class = "predator-text">
+                        <h2>인조 구장의 흔들림 없는 슈팅을 위해 탄생한 친환경 축구화</h2>
+                        <p>모두에게 승리를 안겨줄 골을 위해 새롭게 돌아온 아디다스 프레데터 프로 풋살화를 만나보세요. 
+                            유연하고 부드러운 하이브리드 터치 갑피에 전략적으로 배치된 고무 스트라이크스킨 핀이 정교한 슈팅을 위한 강력한 그립감을 제공합니다. 
+                            돌기가 탑재된 고무 아웃솔과 반응성이 뛰어난 라이트스트라이크 미드솔이 인조 잔디를 지배하기위해 필요한 최상의 안정감을 선사합니다.<br>
+                            최소 20% 이상의 재활용 소재가 사용된 제품입니다.
+                        </p>
+                    </div>
+                    
+                </main>
+
+                <footer>
+                    <div class = "footer-bar">
+                        <button class = "footer-btn" id = "back-btn" onclick = "history.back()"><img src = "image/arrow_back.png"></button>
+                        <button class = "footer-btn" id = "home-btn" onclick = "location.href = 'main.html'"><img src = "image/home.png"></button>
+                        <button class = "footer-btn" id = "menu-btn" onclick = "openMenu()"><img src = "image/menu.png"></button>
+                    </div>
+                </footer>
+            </div>
+
+            <script src = "carousel.js"></script>
+            <script>
+                const predatorImages = [
+                    "image/predator1.png",
+                    "image/predator2.png",
+                    "image/predator3.png",
+                    "image/predator4.png",
+                    "image/predator5.png",
+                    "image/predator6.png",
+                    "image/predator7.png"
+                ];
+
+                createCarousel(predatorImages);
+            </script>
+
+            <div class="menu-frame">
+                <div id="menu-overlay" class="menu-overlay" onclick="closeMenu()"></div>
+                <aside id="side-menu" class="side-menu">
+                    <div class="menu-top" onclick="closeMenu()">
+                        <button class="menu-close-btn" id="menu-close-btn">&#10005;</button>
+                    </div>
+                    <button class="menu-item main-btn" onclick="goTo('main.html')">메인화면</button>
+                    <button class="menu-item intro-btn" onclick="goTo('sub1.html')">풋살소개</button>
+                    <button class="menu-item rule-btn" onclick="goTo('sub2.html')">규칙</button>
+                    <button class="menu-item char-btn" onclick="goTo('sub3.html')">특징</button>
+                    <button class="menu-item shoe-btn" onclick="goTo('sub4.html')">풋살화</button>
+                    <button class="menu-item subshoe1-btn" onclick="goTo('sub4-1.html')">● Predator</button>
+                    <button class="menu-item subshoe2-btn" onclick="goTo('sub4-2.html')">● F50</button>
+                    <button class="menu-item subshoe3-btn" onclick="goTo('sub4-3.html')">● Copa</button>
+                    <button class="menu-item reserve-btn" onclick="goTo('sub5.html')">경기예약</button>
+                </aside>
+            </div>
         </div>
+
+        <script src = "menu.js"></script>
     </body>
 </html>

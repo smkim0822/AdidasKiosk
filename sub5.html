@@ -10,30 +10,53 @@
     </head>
 
     <body>
-        <div class = "sub-frame">
-            <header>
-                <img src = "image/adidas2.png" class = "logo">
-                <div class = "page-title">경기예약</div>
-            </header>
+        <div class = "kiosk-wrapper">
+            <!-- 본 화면 -->
+            <div class = "sub-frame">
+                <header>
+                    <img src = "image/adidas2.png" class = "logo">
+                    <div class = "page-title">경기예약</div>
+                </header>
 
-            <main>
-                <div class = "sub5-main">
-                    <img src = "image/flabfootbal_qr 1.png" class = "plabfootballQR">
-                    <div class = "sub5-title">플랩풋볼 바로가기</div>
-                    <div class = "sub5-desc">
-                        QR코드를 찍어 플랩풋볼 앱으로 이동하고<br>
-                        "아디다스 더베이스"를 검색하세요.
+                <main>
+                    <div class = "sub5-main">
+                        <img src = "image/flabfootbal_qr 1.png" class = "plabfootballQR">
+                        <div class = "sub5-title">플랩풋볼 바로가기</div>
+                        <div class = "sub5-desc">
+                            QR코드를 찍어 플랩풋볼 앱으로 이동하고<br>
+                            "아디다스 더베이스"를 검색하세요.
+                        </div>
                     </div>
-                </div>
-            </main>
+                </main>
 
-            <footer>
-                <div class = "footer-bar">
-                    <button class = "footer-btn" id = "back-btn" onclick = "history.back()"><img src = "image/arrow_back.png"></button>
-                    <button class = "footer-btn" id = "home-btn" onclick = "location.href = 'main.html'"><img src = "image/home.png"></button>
-                    <button class = "footer-btn" id = "menu-btn"><img src = "image/menu.png"></button>
-                </div>
-            </footer>
+                <footer>
+                    <div class = "footer-bar">
+                        <button class = "footer-btn" id = "back-btn" onclick = "history.back()"><img src = "image/arrow_back.png"></button>
+                        <button class = "footer-btn" id = "home-btn" onclick = "location.href = 'main.html'"><img src = "image/home.png"></button>
+                        <button class = "footer-btn" id = "menu-btn" onclick = "openMenu()"><img src = "image/menu.png"></button>
+                    </div>
+                </footer>
+            </div>
+
+            <div class="menu-frame">
+                <div id="menu-overlay" class="menu-overlay" onclick="closeMenu()"></div>
+                <aside id="side-menu" class="side-menu">
+                    <div class="menu-top" onclick="closeMenu()">
+                        <button class="menu-close-btn" id="menu-close-btn">&#10005;</button>
+                    </div>
+                    <button class="menu-item main-btn" onclick="goTo('main.html')">메인화면</button>
+                    <button class="menu-item intro-btn" onclick="goTo('sub1.html')">풋살소개</button>
+                    <button class="menu-item rule-btn" onclick="goTo('sub2.html')">규칙</button>
+                    <button class="menu-item char-btn" onclick="goTo('sub3.html')">특징</button>
+                    <button class="menu-item shoe-btn" onclick="goTo('sub4.html')">풋살화</button>
+                    <button class="menu-item subshoe1-btn" onclick="goTo('sub4-1.html')">● Predator</button>
+                    <button class="menu-item subshoe2-btn" onclick="goTo('sub4-2.html')">● F50</button>
+                    <button class="menu-item subshoe3-btn" onclick="goTo('sub4-3.html')">● Copa</button>
+                    <button class="menu-item reserve-btn" onclick="goTo('sub5.html')">경기예약</button>
+                </aside>
+            </div>
         </div>
+
+        <script src = "menu.js"></script>
     </body>
 </html>
