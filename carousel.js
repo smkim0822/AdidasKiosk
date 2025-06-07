@@ -15,10 +15,18 @@ function createCarousel(imageList){
     });
 
     function update(){
-        imgTag.src = imageList[current];
+        imgTag.classList.add('fade-out');
+        setTimeout(() => {
+            imgTag.src = imageList[current];
+            imgTag.classList.remove('fade-out');
+        }, 200);
         document.querySelectorAll('.carousel-dot').forEach((el, idx) =>
         el.classList.toggle('active', idx === current)
         );
+        // imgTag.src = imageList[current];
+        // document.querySelectorAll('.carousel-dot').forEach((el, idx) =>
+        // el.classList.toggle('active', idx === current)
+        // );
     }
 
     document.getElementById('carousel-left').onclick = function(){

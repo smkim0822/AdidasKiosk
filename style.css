@@ -319,6 +319,12 @@ a{
     width: 832px;
     height: 832px;
     object-fit: contain;
+    transition: opacity 0.4s;
+    opacity: 1;
+}
+
+.carousel-img.fade-out{
+    opacity: 0;
 }
 
 .carousel-arrow{
