@@ -1,23 +1,23 @@
 # Web Application Development Project: Adidas Futsal Kiosk
 
-A web-based kiosk application that introduces adidas futsal, explains its rules and featurs, and showcases various adidas futsal products(Predator, F50, Copa) with detailed image carousels and descriptions.
+A web-based kiosk application that introduces adidas futsal, explains its rules and features, and showcases various adidas futsal products (Predator, F50, Copa) with detailed image carousels and descriptions.
 
 ---
 
 ## Project Overview
 
-- This project is a kiosk-style web application for adidas futsal and produc showcase.
+- This project is a kiosk-style web application for adidas futsal and product showcase.
 - Users can browse futsal information, rules, and characteristics, and explore futsal product models in detail.
 - Each product model (Predator, F50, Copa) has its own detail page with a custom image carousel and product description.
-- The UI includes a resuable side menu for easy navigation.
+- The UI includes a reusable side menu for easy navigation.
 
 ---
 
 ## How to Run
 
-1. Clone thie repository:
+1. Clone this repository:
    ```
-   git clone https://github.com/romantic02/AdidasKiosk.git
+   git clone https://github.com/smkim0822/AdidasKiosk.git
    ```
 2. Open the project folder.
 3. Open landing.html in your browser.
