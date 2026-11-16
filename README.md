@@ -1,43 +1,143 @@
-# Web Application Development Project: Adidas Futsal Kiosk
+# Adidas Futsal Kiosk
 
-A web-based kiosk application that introduces adidas futsal, explains its rules and featurs, and showcases various adidas futsal products(Predator, F50, Copa) with detailed image carousels and descriptions.
+HTML, CSS, 순수 JavaScript로 구현한 아디다스 풋살 키오스크 웹페이지입니다. 키오스크 화면을 터치하는 흐름을 기준으로 풋살의 기본 정보와 규칙을 안내하고, 아디다스 풋살화 제품을 살펴본 뒤 경기 예약 서비스로 이동할 수 있도록 구성했습니다.
 
----
+## 프로젝트 목적
 
-## Project Overview
+- 풋살을 처음 접하는 사용자에게 풋살의 개념, 경기 규칙, 주요 특징을 직관적으로 안내합니다.
+- 아디다스 풋살화 제품군을 제품별 이미지와 설명으로 소개합니다.
+- 키오스크 환경에 맞는 큰 버튼, 하단 고정 내비게이션, 사이드 메뉴를 제공해 화면 간 이동을 쉽게 합니다.
+- 일정 시간 동안 입력이 없으면 시작 화면으로 돌아가 다음 사용자가 바로 이용할 수 있도록 합니다.
 
-- This project is a kiosk-style web application for adidas futsal and produc showcase.
-- Users can browse futsal information, rules, and characteristics, and explore futsal product models in detail.
-- Each product model (Predator, F50, Copa) has its own detail page with a custom image carousel and product description.
-- The UI includes a resuable side menu for easy navigation.
+## 기술 스택
 
----
+- **HTML5**: 랜딩 화면, 메인 메뉴, 콘텐츠 페이지와 제품 상세 페이지 구성
+- **CSS3**: 키오스크 레이아웃, 색상·타이포그래피, 하단 내비게이션, 사이드 메뉴, 캐러셀 전환 효과 스타일링
+- **Vanilla JavaScript**: 라이브러리나 프레임워크 없이 메뉴, 캐러셀, 페이지 이동, 비활성 시간 처리를 구현
+- **Google Fonts**: `Noto Sans KR`, `Poppins` 사용
+- **정적 파일 기반 프로젝트**: 별도의 패키지 설치, 빌드 과정, 백엔드 서버가 필요하지 않음
 
-## How to Run
+## 주요 기능
 
-1. Clone thie repository:
+### 1. 랜딩 및 메인 메뉴
+
+- [`landing.html`](./landing.html)을 클릭하면 [`main.html`](./main.html)로 이동합니다.
+- 메인 화면에서 다음 메뉴를 선택할 수 있습니다.
+  - 풋살 소개
+  - 규칙
+  - 특징
+  - 풋살화
+  - 경기 예약
+
+### 2. 풋살 정보 안내
+
+- [`sub1.html`](./sub1.html): 풋살의 정의와 유래 소개
+- [`sub2.html`](./sub2.html): 경기 인원, 경기 시간, 경기장, 교체, 반칙, 킥인, 골키퍼 규칙 안내
+- [`sub3.html`](./sub3.html): 풋살의 인원 구성, 교체와 오프사이드, 좁은 공간의 플레이, 경기 시간, 장비, 실내 경기 특성 안내
+
+### 3. 풋살화 제품 탐색
+
+- [`sub4.html`](./sub4.html)에서 제품군을 선택할 수 있습니다.
+- 제품 상세 페이지는 다음 세 가지입니다.
+  - [`sub4-1.html`](./sub4-1.html): Predator TF
+  - [`sub4-2.html`](./sub4-2.html): F50 TF
+  - [`sub4-3.html`](./sub4-3.html): Copa TF
+- 제품별 특징과 소재·착용감·그립·반발력 등에 대한 설명을 제공합니다.
+
+### 4. 제품 이미지 Carousel
+
+- [`scripts/carousel.js`](./scripts/carousel.js)의 `createCarousel()` 함수로 공통 캐러셀을 구현했습니다.
+- 좌우 화살표로 이미지를 순환하고, 하단 인디케이터를 눌러 원하는 이미지로 바로 이동할 수 있습니다.
+- 현재 이미지와 인디케이터를 함께 갱신하며, 이미지 변경 시 짧은 페이드 전환 효과를 적용합니다.
+- 제품별 이미지 수는 다음과 같습니다.
+  - Predator: 7장
+  - F50: 10장
+  - Copa: 9장
+
+### 5. 사이드 내비게이션
+
+- 각 콘텐츠 페이지 하단의 메뉴 버튼으로 사이드 메뉴를 열 수 있습니다.
+- [`scripts/menu.js`](./scripts/menu.js)가 다음 동작을 처리합니다.
+  - 메뉴 열기·닫기
+  - 메뉴 바깥 오버레이 클릭으로 닫기
+  - 메인 화면과 각 콘텐츠 페이지로 이동
+  - 현재 페이지 메뉴 항목 활성화 표시
+- 하단 내비게이션에서 이전 페이지, 메인 화면, 사이드 메뉴로 이동할 수 있습니다.
+
+### 6. 키오스크 자동 초기화
+
+- [`scripts/timeout.js`](./scripts/timeout.js)는 마지막 클릭 후 60초 동안 입력이 없으면 [`landing.html`](./landing.html)로 이동시킵니다.
+- 사용자가 화면을 클릭하면 타이머가 다시 시작됩니다.
+- 키오스크에서 이전 사용자의 화면이 그대로 남지 않도록 초기 화면으로 자동 복귀하는 기능입니다.
+
+### 7. 경기 예약 안내
+
+- [`sub5.html`](./sub5.html)에서 플랩풋볼 QR 코드를 제공합니다.
+- QR 코드를 스캔해 플랩풋볼 앱으로 이동한 뒤 “아디다스 더베이스”를 검색하도록 안내합니다.
+
+## 페이지 흐름
+
+```text
+landing.html
+    └── main.html
+        ├── sub1.html       풋살 소개
+        ├── sub2.html       규칙
+        ├── sub3.html       특징
+        ├── sub4.html       풋살화 선택
+        │   ├── sub4-1.html  Predator 상세
+        │   ├── sub4-2.html  F50 상세
+        │   └── sub4-3.html  Copa 상세
+        └── sub5.html       경기 예약 안내
+```
+
+## 프로젝트 구조
+
+```text
+WAD/
+├── landing.html             시작 화면
+├── main.html                메인 메뉴
+├── sub1.html                풋살 소개
+├── sub2.html                풋살 규칙
+├── sub3.html                풋살 특징
+├── sub4.html                풋살화 제품 선택
+├── sub4-1.html              Predator 제품 상세
+├── sub4-2.html              F50 제품 상세
+├── sub4-3.html              Copa 제품 상세
+├── sub5.html                경기 예약 안내
+├── style.css                전체 공통 스타일
+├── scripts/
+│   ├── carousel.js          제품 이미지 캐러셀
+│   ├── menu.js              사이드 메뉴 및 현재 메뉴 표시
+│   └── timeout.js           60초 비활성 시 랜딩 화면 복귀
+└── image/                   로고, 아이콘, 제품 이미지, QR 이미지
+```
+
+## 실행 방법
+
+### 방법 1. 브라우저에서 직접 실행
+
+1. 저장소를 내려받습니다.
+
+   ```bash
+   git clone https://github.com/smkim0822/AdidasKiosk.git
    ```
-   git clone https://github.com/romantic02/AdidasKiosk.git
-   ```
-2. Open the project folder.
-3. Open landing.html in your browser.
 
-> No build process or server is required.
-> All pages work as static HTML/CSS/JS.
+2. 프로젝트 폴더를 엽니다.
+3. [`landing.html`](./landing.html)을 웹 브라우저에서 엽니다.
+4. 시작 화면을 클릭해 키오스크를 이용합니다.
 
----
+### 방법 2. 로컬 정적 서버 사용
 
-## Features
+로컬 서버를 사용하면 브라우저의 파일 접근 제한 환경을 피하면서 확인할 수 있습니다. 예를 들어 Python이 설치되어 있다면 프로젝트 폴더에서 다음 명령을 실행합니다.
 
-- Futsal introduction, rules, and features pages
-- Product selection main page with links to detail pages
-- **Carousel (slider)** for viewing multiple images per product (Predator: 7 images, F50: 10 images, Copa: 9 images)
-- Product detail pages with description and image carousel
-- Responsive side menu for navigation
-- Clean, modern UI
+```bash
+python -m http.server 8000
+```
 
-## Image Credits
+이후 브라우저에서 <http://localhost:8000/landing.html>을 엽니다.
 
-Some images used in this project are sourced from the official adidas website (adidas.co.kr) for educational/non-commercial demonstration purposes only.
-All rights to these images belong to adidas.
-If you are the copyright holder and wish to request removal, please contact me.
+## 참고 사항
+
+- 프로젝트는 외부 JavaScript 라이브러리 없이 동작합니다.
+- Google Fonts를 불러오므로 온라인 환경에서는 지정된 `Noto Sans KR`과 `Poppins` 글꼴이 적용됩니다. 네트워크가 차단된 환경에서는 브라우저의 대체 글꼴이 사용됩니다.
+- 화면 콘텐츠와 제품 이미지는 교육·비상업적 시연을 목적으로 사용했습니다. 아디다스 로고와 제품 관련 이미지의 권리는 각 권리자에게 있습니다.
